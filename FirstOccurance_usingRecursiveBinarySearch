@@ -1,0 +1,19 @@
+def firstOccurance(l, target, start, end):
+    if start > end:
+        return -1
+    
+    mid = (start + end)//2
+
+    if l[mid] < target:
+        return firstOccurance(l, target, mid + 1, end)
+    elif l[mid] > target:
+        return firstOccurance(l, target, start, mid + 1)
+    else:
+        if (mid==0) or (l[mid - 1] != l[mid]):
+            return mid
+        else:
+            return firstOccurance(l, target, start, mid - 1)
+        
+l = [10, 20, 30, 40, 50, 50, 50, 60, 70]
+
+print(firstOccurance(l, 50, 0, len(l) - 1))

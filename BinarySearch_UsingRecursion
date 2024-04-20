@@ -1,0 +1,14 @@
+def BinarySearchRecursion(l, ele, start, end):
+    if start > end:
+        return -1
+    
+    mid = (start + end)//2
+    
+    if l[mid] == ele:
+        return mid
+    elif l[mid] < ele:
+        return BinarySearchRecursion(l, ele, mid + 1, end)
+    else:
+        return BinarySearchRecursion(l, ele, start, mid - 1)
+
+print(BinarySearchRecursion([10, 20, 30, 40, 50], 50, 0, 4))

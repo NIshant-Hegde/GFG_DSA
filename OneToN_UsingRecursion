@@ -1,0 +1,16 @@
+def OneToN(n):
+    if n==0:
+        return
+    OneToN(n-1)
+    print(n)
+
+def NToOne(n):
+    if n==0:
+        return
+    print(n)
+    NToOne(n-1)
+    
+
+OneToN(5)
+print('\n')
+NToOne(5)

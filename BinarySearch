@@ -1,0 +1,16 @@
+def binarySearch(l, ele):
+    start = 0
+    end = len(l) - 1
+
+    while (start <= end):
+        mid = (start + end)//2
+        if l[mid] == ele:
+            return mid
+        elif l[mid] < ele:
+            start = mid + 1
+        else:
+            end = mid - 1
+
+    return -1
+
+print(binarySearch([10, 20, 30, 40, 50], 60))
